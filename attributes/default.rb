@@ -13,3 +13,5 @@ default['solr']['port']     = '8984'
 default['solr']['pid_file'] = '/var/run/solr.pid'
 default['solr']['log_file'] = '/var/log/solr.log'
 default['solr']['install_java'] = true
+default['solr']['java_opts']['xms'] = '128M'
+default['solr']['java_opts']['xmx'] = '512M'

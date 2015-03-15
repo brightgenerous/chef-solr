@@ -44,7 +44,9 @@ template '/var/lib/solr.start' do
     :solr_home => node['solr']['data_dir'],
     :port => node['solr']['port'],
     :pid_file => node['solr']['pid_file'],
-    :log_file => node['solr']['log_file']
+    :log_file => node['solr']['log_file'],
+    :java_opts_xms => node['solr']['java_opts']['xms'],
+    :java_opts_xmx => node['solr']['java_opts']['xmx']
   )
   only_if { !platform_family?('debian') }
 end
@@ -59,7 +61,9 @@ template '/etc/init.d/solr' do
     :solr_home => node['solr']['data_dir'],
     :port => node['solr']['port'],
     :pid_file => node['solr']['pid_file'],
-    :log_file => node['solr']['log_file']
+    :log_file => node['solr']['log_file'],
+    :java_opts_xms => node['solr']['java_opts']['xms'],
+    :java_opts_xmx => node['solr']['java_opts']['xmx']
   )
 end
 
